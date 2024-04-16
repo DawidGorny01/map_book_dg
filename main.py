@@ -1,14 +1,13 @@
-imie_1: str = "Artur"
-imie_2: str = "Zuzanna"
-imie_3: str = "Kinga"
-imie_4: str = "Marysia"
-online_1: str = "online"
-online_2: str = "offline"
-online_3: str = "online"
-online_4: str = "online"
+from models.data_source import users
+from utils.crud import read_friends
 
-users: list[str] = [imie_1, imie_2, imie_3, imie_4]
-lista_online: list[str] = [online_1, online_2, online_3, online_4]
-print("Lista znajomych to: ")
-for index, user in enumerate(users):
-    print(f"\tTwój znajomy {user} jest {lista_online[index]} ")
+if __name__ == '__main__':
+    while True:
+        print("Welcome to the menu choose an option: ")
+        print("1. Read a lits of friends ")
+        print("0. Exit ")
+        menu_option = input("Choose an option: ")
+        if menu_option == "0":
+            break
+        if menu_option == "1":
+            read_friends(users)
